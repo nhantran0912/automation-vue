@@ -1,0 +1,19 @@
+<template>
+  <div class="jumbotron">
+    <h4>Vui lòng Đăng nhập bằng một trong những cách sau:</h4>
+    <h3>Cách 1: Nhập A</h3>
+    <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+    <a class="btn btn-lg btn-primary" href="/" role="button">View navbar docs &raquo;</a>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
+    }
+  }
+</script>
