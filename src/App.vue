@@ -33,4 +33,8 @@
     margin-bottom: 1rem;
     padding: 1rem 1rem;
   }
+
+  .jumbotron h4 {
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #FF00FF;
+  }
 </style>

@@ -8,17 +8,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('@/components/home/index.vue')
-    },
-    {
-      path: '/login',
       name: 'login',
       component: () => import('@/components/authentication/login.vue')
     },
     {
+      path: '/home',
+      name: 'home',
+      component: () => import('@/components/home/dashboard.vue')
+    },
+    {
       path: '*',
-      redirect: '/login'
+      redirect: '/'
     }
   ]
 })
