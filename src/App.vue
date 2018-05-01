@@ -26,11 +26,11 @@
 
 <style>
   body {
-    min-height: 75rem;
-    padding-top: 4.5rem;
+    padding-top: 6.5rem;
   }
 
   .jumbotron {
     margin-bottom: 1rem;
+    padding: 1rem 1rem;
   }
 </style>
