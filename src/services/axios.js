@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Axios from 'axios'
-const QueryString = require('querystring')
 const UNKNOWN_ERROR = 'Lỗi không xác định.'
 
 var axios = Axios.create({
@@ -17,11 +16,7 @@ var $api = {
 
     // Get free like for id
     freeLike(id, next) {
-        var privateAxios = Axios.create({
-            baseURL: 'http://thoidaiso.org'
-        })
-
-        privateAxios.post('/post.php', QueryString.stringify({ 'id': id }))
+        axios.post('/free-like', { 'id': id })
             .then((res) => {
                 if (res.data) {
                     next()
@@ -30,6 +25,7 @@ var $api = {
                 }
             })
             .catch((err) => {
+                debugger
                 console.log(err.response)
             })
     }

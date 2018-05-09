@@ -26,7 +26,7 @@
 
 <style>
   body {
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
   }
 
   .jumbotron {
