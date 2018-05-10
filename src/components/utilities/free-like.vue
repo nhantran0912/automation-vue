@@ -10,7 +10,8 @@
     <div class="text-danger" v-if="clicked">
       <small id="emailHelp" class="form-text" v-show="requiredId">Vui lòng nhập ID hoặc link bài viết.</small>
     </div>
-    <label for="freeLike" class="text-info mt-2">Vui lòng <b>ĐĂNG NHẬP</b> để sử dụng các chức năng như tăng like, tăng follow,... không giới hạn.</label>
+    <label for="freeLike" class="text-info mt-2">Vui lòng
+      <b>ĐĂNG NHẬP</b> để sử dụng các chức năng như tăng like, tăng follow,... không giới hạn.</label>
   </div>
 </template>
 
@@ -27,8 +28,8 @@
       submit() {
         this.clicked = true
         if (!this.requiredId) {
-          this.$api.freeLike(this.id, (data) => {
-            console.log(data)
+          this.$api.freeLike(this.id, (err, data) => {
+            alert(data.message)
           })
         }
       }
