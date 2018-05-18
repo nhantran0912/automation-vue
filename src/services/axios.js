@@ -4,7 +4,8 @@ const QueryString = require('querystring')
 const UNKNOWN_ERROR = 'Lỗi không xác định.'
 
 var axios = Axios.create({
-  baseURL: 'http://192.168.3.200:3000'
+  baseURL: 'http://localhost:3000',
+  withCredentials: true
 })
 
 var $api = {
@@ -50,6 +51,16 @@ var $api = {
           next(err, { message: err.message })
         })
     }
+  },
+
+  login(accessToken) {
+    axios.post('/login', { accessToken })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        //   next(err, { message: err.message })
+      })
   }
 
 }

@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import $user from './../services/user'
 import login from '@/components/authentication/login.vue'
 
 Vue.use(Router)
 
-export default new Router({
+var router = new Router({
   mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -29,3 +33,18 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if ($user.logged === false && ['login'].indexOf(to.name) === -1) {
+    next(`/?redirect=${to.path}`)
+  }
+  else if ($user.logged === true && ['login'].indexOf(to.name) > -1) {
+    next('/home')
+  }
+  else {
+    // document.title = to.meta.title + ' | Geekly進捗管理ページ'
+    next()
+  }
+})
+
+export default router

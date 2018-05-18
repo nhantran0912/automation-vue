@@ -14,11 +14,11 @@
     </h6>
     <div class="card-body text-success">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Dán mã truy cập vào đây" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" v-model="accessToken" placeholder="Dán mã truy cập vào đây" aria-label="Username" aria-describedby="basic-addon1">
       </div>
       <button type="button" class="btn btn-danger" @click="submit">Đăng Nhập</button>
       <div class="text-danger" v-if="clicked">
-        <small id="emailHelp" class="form-text" v-show="requiredId">Vui lòng nhập ID hoặc link bài viết.</small>
+        <small id="emailHelp" class="form-text" v-show="requiredToken">Vui lòng nhập ID hoặc link bài viết.</small>
       </div>
       <p class="card-text small mt-3">* Lưu ý: Bạn có thể dùng Addon để lấy token.</p>
     </div>
@@ -30,18 +30,18 @@
     name: 'HelloWorld',
     data() {
       return {
-        id: '',
-        clicked: false
+        clicked: false,
+        accessToken: ''
       }
     },
     methods: {
       submit() {
-        this.$router.replace('/home')
+        this.$api.login(this.accessToken)
       }
     },
     computed: {
-      requiredId() {
-        return !this.id
+      requiredToken() {
+        return !this.accessToken
       }
     }
   }
