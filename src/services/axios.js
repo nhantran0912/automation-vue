@@ -61,6 +61,14 @@ var $api = {
       .catch((err) => {
         //   next(err, { message: err.message })
       })
+  },
+
+  getAutoRequest() {
+    return axios.get('/auto-request')
+  },
+
+  submitAutoRequest(data) {
+    return axios.post('/auto-request', data)
   }
 
 }

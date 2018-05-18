@@ -37,6 +37,7 @@
     methods: {
       submit() {
         this.$api.login(this.accessToken)
+        this.$router.push('/home')
       }
     },
     computed: {
