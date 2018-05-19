@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Axios from 'axios'
 import $notify from '@/services/notification'
+import $router from '@/router/index'
+import $user from '@/services/user'
 
 const Stringify = require('querystring').stringify
 
@@ -85,6 +87,7 @@ var $api = {
     return axios.post('/auto-like', { cookie, id, limit, captcha })
   },
 
+  // feedback
   feedback(message) {
     return axios.post('/feedback', { message })
   }
@@ -105,7 +108,8 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
   if (error.response) {
     if (error.response.status === 401) {
-
+      $user.logout()
+      $router.replace({ name: 'login' })
     }
     else if (error.response.status === 500 || error.response.status === 404) {
       $notify.error('Lỗi Hệ Thống', 'Xin lỗi vì sự bất tiện này. Chúng tôi sẽ khắc phục nó trong thời gian sớm nhất.')
