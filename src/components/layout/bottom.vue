@@ -3,16 +3,16 @@
     <div class="container">
       <div class="row pt-3 pb-3">
         <div class="col-lg-9">
-          <p>FBVN.ORG được thành lập vào năm 2018</p>
+          <p>FBVN.ORG được thành lập vào ngày 19/5/2018</p>
           <p>
-            Thông tin liên hệ: Số điện thoại 0902 615 325 hoặc Email tuyhpq@gmail.com
+            Thông tin liên hệ: Số điện thoại 0902.615.325 hoặc Email tuyhpq@gmail.com
           </p>
         </div>
         <div class="col-lg-3 text-center">
           <div class="input-group input-group-sm mb-1">
-            <textarea class="form-control" placeholder="Ý kiến, đóng góp của bạn dành cho website."></textarea>
+            <textarea class="form-control" v-model="message" maxlength="1000" placeholder="Ý kiến, đóng góp của bạn dành cho website."></textarea>
           </div>
-          <button type="button" class="btn btn-danger btn-sm w-100">Gửi Cho Chúng Tôi</button>
+          <button type="button" @click="submit" class="btn btn-danger btn-sm w-100" :disabled="loading || !message">Gửi Cho Chúng Tôi</button>
         </div>
       </div>
     </div>
@@ -24,7 +24,23 @@
     name: 'bottom',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        message: '',
+        loading: false
+      }
+    },
+    methods: {
+      submit() {
+        this.loading = true
+        this.$api.feedback(this.message)
+          .then((res) => {
+            this.loading = false
+            this.$notify.success('Chân Thành Cảm Ơn', 'Chúng tôi đã ghi nhận ý kiến, đóng góp của bạn.', () => {
+              this.message = ''
+            })
+          })
+          .catch((err) => {
+            this.loading = false
+          })
       }
     }
   }
