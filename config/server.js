@@ -5,6 +5,6 @@ module.exports = {
     baseURL: 'http://localhost:3000/api/fbvn'
   },
   'prod': {
-    baseURL: 'http://fbvn.org:3000/api/fbvn'
+    baseURL: 'https://fbvn.org:3000/api/fbvn'
   }
 }
