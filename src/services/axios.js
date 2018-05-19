@@ -65,12 +65,14 @@ var $api = {
     return axios.post('/access-url', { username, password })
   },
 
+  // get auto request
   getAutoRequest() {
     return axios.get('/auto-request')
   },
 
-  submitAutoRequest(data) {
-    return axios.post('/auto-request', data)
+  // submit auto request
+  submitAutoRequest(cookie, id, limit, captcha) {
+    return axios.post('/auto-request', { cookie, id, limit, captcha })
   },
 
   feedback(message) {

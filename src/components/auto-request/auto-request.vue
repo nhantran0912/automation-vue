@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="jumbotron">
-      <h3>Xin chào, Hứa Quý</h3>
-      <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+    <div class="jumbotron" v-show="data.length === 0">
+      <p class="lead text-danger">Đang tải dữ liệu từ các máy chủ Auto Request...</p>
     </div>
     <div class="row" v-for="server in data">
       <div class="col-lg-12">
         <div class="card border-info mb-3">
           <h6 class="card-header text-light bg-primary">
-            Máy Chủ 1
+            {{ server.name }}
+            <span class="text-danger" v-show="server.waitingTime">(Chờ {{ server.waitingTime }} giây để tiếp tục)</span>
           </h6>
-          <div class="card-body text-success">
+          <div class="card-body text-success" v-show="!server.waitingTime">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" v-model="server.id" placeholder="Nhập ID cần tăng kết bạn (Ví dụ: xxxxxxx)" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" v-model="server.id" placeholder="Nhập ID cần tăng kết bạn (Ví dụ: 100007665604062)" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
               <img :src="server.captchaSrc" class="rounded" alt="captcha">
@@ -20,11 +20,7 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control" v-model="server.captcha" placeholder="Nhập mã captcha bạn nhìn thấy ở trên" aria-label="Captcha" aria-describedby="basic-addon1">
             </div>
-            <button type="button" class="btn btn-danger" @click="submit(server)">Gửi (tối đa {{server.credit}})</button>
-            <div class="text-danger" v-if="clicked">
-              <small class="form-text">Vui lòng nhập ID hoặc link bài viết.</small>
-            </div>
-            <p class="card-text small mt-3">* Lưu ý: Đăng nhập trên trình duyệt trước khi đăng nhập trên hệ thống.</p>
+            <button type="button" class="btn btn-danger" @click="submit(server)" :disabled="!server.id || !server.captcha || loading">Gửi (tối đa {{server.credit}})</button>
           </div>
         </div>
       </div>
@@ -36,28 +32,39 @@
   export default {
     data() {
       return {
-        clicked: false,
-        data: []
+        data: [],
+        loading: false
       }
     },
     created() {
-      this.$api.getAutoRequest()
-        .then((res) => {
-          this.data = res.data
-        })
-        .catch((err) => {
-
-        })
+      this.reloadData()
     },
     methods: {
       submit(server) {
-        this.$api.submitAutoRequest({ 'cookie': server.cookie, 'id': server.id, 'limit': server.credit, 'captcha': server.captcha })
+        this.loading = true
+        this.$api.submitAutoRequest(server.cookie, server.id, server.credit, server.captcha)
           .then((res) => {
-            debugger
-        
+            this.loading = false
+            this.$notify.success(undefined, res.data.message, () => {
+              this.data = []
+              this.reloadData()
+            })
           })
           .catch((err) => {
-
+            this.loading = false
+            this.$notify.error(undefined, err.message, () => {
+              this.data = []
+              this.reloadData()
+            })
+          })
+      },
+      reloadData() {
+        this.$api.getAutoRequest()
+          .then((res) => {
+            this.data = res.data
+          })
+          .catch((err) => {
+            // nothing
           })
       }
     }
