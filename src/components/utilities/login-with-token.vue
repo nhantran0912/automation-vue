@@ -21,7 +21,10 @@
         <small class="form-text" v-show="requiredToken">Vui lòng nhập ID hoặc link bài viết.</small>
         <small class="form-text" v-show="tooshortToken">Mã truy cập quá ngắn.</small>
       </div>
-      <p class="card-text small mt-3">* Lưu ý: Bạn có thể dùng Addon để lấy token.</p>
+      <p class="card-text small mt-3">
+        Bạn có thể dùng
+        <a href="https://goo.gl/auEKHz">Tiện ích của Chrome</a> để lấy mã truy cập.
+      </p>
     </div>
   </div>
 </template>

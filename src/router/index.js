@@ -19,14 +19,26 @@ var router = new Router({
       component: login
     },
     {
-      path: '/home',
-      name: 'home',
-      component: () => import('@/components/home/dashboard.vue')
-    },
-    {
-      path: '/auto-request',
-      name: 'auto-request',
-      component: () => import('@/components/auto-request/auto-request.vue')
+      path: '/',
+      component: () => import('@/components/layout/user-info.vue'),
+      children: [
+        {
+          path: '/home',
+          name: 'home',
+          component: () => import('@/components/home/dashboard.vue'),
+          meta: {
+            title: 'Trang Chủ'
+          }
+        },
+        {
+          path: '/auto-request',
+          name: 'auto-request',
+          component: () => import('@/components/auto-request/auto-request.vue'),
+          meta: {
+            title: 'Trang Chủ'
+          }
+        }
+      ]
     },
     {
       path: '*',

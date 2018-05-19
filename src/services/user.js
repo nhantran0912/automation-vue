@@ -24,6 +24,7 @@ var user = {
 
   logout() {
     this.logged = false
+    document.cookie = NAME + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;'
   },
 
   getData() {

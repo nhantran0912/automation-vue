@@ -40,7 +40,7 @@
         <textarea class="form-control" v-model="jsonData" maxlength="2000" placeholder="Sao chép toàn bộ mã đăng nhập phía trên vào đây..."></textarea>
       </div>
       <button v-if="accessUrl" type="button" @click="submitJsonData" :disabled="loading || !jsonData" class="btn btn-danger">Đăng nhập</button>
-      <p class="card-text small mt-3">* Lưu ý: Đăng nhập trên trình duyệt trước khi đăng nhập trên hệ thống.</p>
+      <p class="card-text small mt-3">* Đăng nhập trên trình duyệt trước khi đăng nhập trên hệ thống để tránh bị checkpoint.</p>
     </div>
   </div>
 </template>
