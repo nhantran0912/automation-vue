@@ -28,7 +28,7 @@
       </ul>
       <form class="form-inline mt-2 mt-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Nhập từ khóa..." aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Tìm kiếm</button>
       </form>
     </div>
   </nav>

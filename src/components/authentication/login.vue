@@ -27,7 +27,8 @@
         <div class="col-sm-4 text-center">
           <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
             <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
           </svg>
           <h5>Tăng Lượt Theo Dõi</h5>
           <p class="">Tăng lượt theo dõi (follow) trên Trang Cá Nhân của bạn không giới hạn.</p>
@@ -61,7 +62,8 @@
           <div class="col-sm-4 text-center">
             <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
               <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z" />
+              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+              />
             </svg>
             <h5>Xếp Hạng Fanpage</h5>
             <p class="">Tăng điểm xếp hạng của Trang fanpage trên cộng đồng Facebook.</p>
