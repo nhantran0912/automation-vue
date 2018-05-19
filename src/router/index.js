@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import $user from './../services/user'
+import $user from '@/services/user'
+import $notify from '@/services/notification'
 import login from '@/components/authentication/login.vue'
 
 Vue.use(Router)
@@ -36,6 +37,7 @@ var router = new Router({
 
 router.beforeEach((to, from, next) => {
   if ($user.logged === false && ['login'].indexOf(to.name) === -1) {
+    $notify.error('Đăng nhập để tiếp tục...')
     next(`/?redirect=${to.path}`)
   }
   else if ($user.logged === true && ['login'].indexOf(to.name) > -1) {

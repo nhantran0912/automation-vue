@@ -2,7 +2,7 @@
   <div id="app">
     <top></top>
     <main role="main" class="container">
-      <router-view/>
+      <router-view></router-view>
     </main>
     <bottom></bottom>
   </div>
