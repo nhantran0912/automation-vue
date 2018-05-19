@@ -10,16 +10,19 @@ var axios = Axios.create({
 })
 
 var $api = {
-
-  // Get free like for id
+  // get free like from id
   freeLike(id, next) {
     axios.post('/free-like', { 'id': id })
       .then((firstRes) => {
         var data = firstRes.data
-        if (data.message.indexOf('Thành Công') !== -1 || data.message.indexOf('Chưa Ở chế Độ Công Khai') !== -1) {
+        if (data.message.indexOf('thành công') !== -1) {
           next(null, { 'message': data.message })
-        } else {
-          Axios.create().post(data.url, Stringify({ [data.name]: id }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+        }
+        else if (data.message.indexOf('Chưa Ở chế Độ Công Khai') !== -1) {
+          next({ 'message': data.message }, null)
+        }
+        else {
+          Axios.create().post(data.url, Stringify({ [data.name]: id }))
             .then(() => {
               finalSubmit(data)
             })
@@ -29,7 +32,7 @@ var $api = {
         }
       })
       .catch((err) => {
-        next(err, { message: err.message })
+        // nothing
       })
 
     function finalSubmit(firstData) {
@@ -37,13 +40,13 @@ var $api = {
         .then((res) => {
           var data = res.data
           if (data.message.indexOf('Chưa Ở chế Độ Công Khai') !== -1 || data.message === firstData.message) {
-            next(null, { message: data.message })
+            next({ 'message': data.message }, null)
           } else {
-            next(null, { message: 'Tăng like thành công.' })
+            next(null, { 'message': 'Tăng like thành công.' })
           }
         })
         .catch((err) => {
-          next(err, { message: err.message })
+          // nothing
         })
     }
   },
