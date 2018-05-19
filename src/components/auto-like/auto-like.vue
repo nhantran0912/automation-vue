@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="jumbotron" v-show="data.length === 0">
-      <p class="lead text-danger">Đang tải dữ liệu từ các máy chủ Auto Request...</p>
+      <p class="lead text-danger">Đang tải dữ liệu từ các máy chủ Auto Like...</p>
     </div>
     <div class="row" v-for="server in data">
       <div class="col-lg-12">
@@ -12,7 +12,7 @@
           </h6>
           <div class="card-body text-success" v-show="!server.waitingTime">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" v-model="server.id" placeholder="Nhập ID cần tăng kết bạn (Ví dụ: 100007665604062)" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" v-model="server.id" placeholder="Nhập ID cần tăng like (Ví dụ: 2004260029839498)" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
               <img :src="server.captchaSrc" class="rounded" alt="captcha">
@@ -42,7 +42,7 @@
     methods: {
       submit(server) {
         this.loading = true
-        this.$api.submitAutoRequest(server.cookie, server.id, server.credit, server.captcha)
+        this.$api.submitAutoLike(server.cookie, server.id, server.credit, server.captcha)
           .then((res) => {
             this.loading = false
             this.$notify.success(undefined, res.data.message, () => {
@@ -59,7 +59,7 @@
           })
       },
       reloadData() {
-        this.$api.getAutoRequest()
+        this.$api.getAutoLike()
           .then((res) => {
             this.data = res.data
           })

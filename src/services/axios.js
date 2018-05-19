@@ -75,6 +75,16 @@ var $api = {
     return axios.post('/auto-request', { cookie, id, limit, captcha })
   },
 
+  // get auto like
+  getAutoLike() {
+    return axios.get('/auto-like')
+  },
+
+  // submit auto like
+  submitAutoLike(cookie, id, limit, captcha) {
+    return axios.post('/auto-like', { cookie, id, limit, captcha })
+  },
+
   feedback(message) {
     return axios.post('/feedback', { message })
   }

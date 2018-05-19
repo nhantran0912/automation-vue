@@ -37,6 +37,14 @@ var router = new Router({
           meta: {
             title: 'Trang Chủ'
           }
+        },
+        {
+          path: '/auto-like',
+          name: 'auto-like',
+          component: () => import('@/components/auto-like/auto-like.vue'),
+          meta: {
+            title: 'Trang Chủ'
+          }
         }
       ]
     },
