@@ -22,7 +22,7 @@
             </div>
             <button type="button" class="btn btn-danger" @click="submit(server)">Gửi (tối đa {{server.credit}})</button>
             <div class="text-danger" v-if="clicked">
-              <small id="emailHelp" class="form-text">Vui lòng nhập ID hoặc link bài viết.</small>
+              <small class="form-text">Vui lòng nhập ID hoặc link bài viết.</small>
             </div>
             <p class="card-text small mt-3">* Lưu ý: Đăng nhập trên trình duyệt trước khi đăng nhập trên hệ thống.</p>
           </div>

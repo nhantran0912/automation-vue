@@ -1,7 +1,7 @@
 <template>
   <div class="card border-info mb-3">
     <h6 class="card-header text-light bg-primary">
-      <svg with="24" height="24" viewBox="0 0 512 512" fill="#FFF" style="vertical-align: middle;">
+      <svg with="24" height="24" viewBox="0 0 512 512" fill="#CCC" class="align-middle">
         <path d="M252.864,216.448l-63.979-64c-4.16-4.16-10.923-4.16-15.083,0c-4.16,4.16-4.16,10.923,0,15.083l45.781,45.803H32
           c-5.888,0-10.667,4.779-10.667,10.667S26.112,234.667,32,234.667h187.584l-45.781,45.781c-4.16,4.16-4.16,10.923,0,15.083
           c2.069,2.091,4.8,3.136,7.531,3.136c2.731,0,5.461-1.045,7.552-3.115l63.979-63.979c0.981-0.981,1.771-2.176,2.325-3.477
@@ -32,7 +32,7 @@
       </div>
       <button type="button" class="btn btn-danger">Đăng Nhập</button>
       <div class="text-danger" v-if="clicked">
-        <small id="emailHelp" class="form-text" v-show="requiredId">Vui lòng nhập ID hoặc link bài viết.</small>
+        <small class="form-text" v-show="requiredId">Vui lòng nhập ID hoặc link bài viết.</small>
       </div>
       <p class="card-text small mt-3">* Lưu ý: Đăng nhập trên trình duyệt trước khi đăng nhập trên hệ thống.</p>
     </div>

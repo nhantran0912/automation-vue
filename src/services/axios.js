@@ -51,14 +51,9 @@ var $api = {
     }
   },
 
+  // login with access token
   login(accessToken) {
-    axios.post('/login', { accessToken })
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        //   next(err, { message: err.message })
-      })
+    return axios.post('/login', { accessToken })
   },
 
   getAutoRequest() {
@@ -101,6 +96,9 @@ axios.interceptors.response.use(function (response) {
       var data = error.response.data
       if (data.error === 'MISSING_DATA') {
         $notify.error('Dữ Liệu Bị Mất', 'Vui lòng liên hệ với chúng tôi để được giải quyết.')
+      }
+      else if (data.error === 'LOGIN_001' || data.error === 'LOGIN_002') {
+        $notify.error(undefined, 'Mã truy cập không chính xác hoặc không đúng loại. <br>Hãy thử đăng nhập bằng tài khoản và mật khẩu.')
       }
     }
     else {

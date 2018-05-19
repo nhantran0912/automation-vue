@@ -1,7 +1,7 @@
 <template>
   <div class="card border-info mb-3">
     <h6 class="card-header text-light bg-primary">
-      <svg with="20" height="20" viewBox="0 0 512 512" fill="#FFF" style="vertical-align: middle;">
+      <svg with="20" height="20" viewBox="0 0 512 512" fill="#CCC" class="align-middle">
         <path d="M394.667,214.421v-75.755C394.667,62.208,332.459,0,256,0S117.333,62.208,117.333,138.667v75.755
           c-24.32,4.949-42.667,26.496-42.667,52.245v192C74.667,488.064,98.581,512,128,512h256c29.419,0,53.333-23.936,53.333-53.333v-192
           C437.333,240.917,418.987,219.371,394.667,214.421z M279.659,378.24l8.235,57.579c0.448,3.072-0.469,6.165-2.496,8.491
@@ -16,9 +16,10 @@
       <div class="input-group mb-3">
         <input type="text" class="form-control" v-model="accessToken" placeholder="Dán mã truy cập vào đây" aria-label="Username" aria-describedby="basic-addon1">
       </div>
-      <button type="button" class="btn btn-danger" @click="submit">Đăng Nhập</button>
+      <button type="button" @click="submit" :disabled="loading" class="btn btn-danger">Đăng nhập</button>
       <div class="text-danger" v-if="clicked">
-        <small id="emailHelp" class="form-text" v-show="requiredToken">Vui lòng nhập ID hoặc link bài viết.</small>
+        <small class="form-text" v-show="requiredToken">Vui lòng nhập ID hoặc link bài viết.</small>
+        <small class="form-text" v-show="tooshortToken">Mã truy cập quá ngắn.</small>
       </div>
       <p class="card-text small mt-3">* Lưu ý: Bạn có thể dùng Addon để lấy token.</p>
     </div>
@@ -27,22 +28,36 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
     data() {
       return {
+        accessToken: '',
         clicked: false,
-        accessToken: ''
+        loading: false
       }
     },
     methods: {
       submit() {
-        this.$api.login(this.accessToken)
-        this.$router.push('/home')
+        this.clicked = true
+        if (!this.requiredToken && !this.tooshortToken) {
+          this.loading = true
+          this.$api.login(this.accessToken)
+            .then((res) => {
+              this.loading = false
+              this.$user.login(res.data)
+              this.$router.replace({ name: 'home' })
+            })
+            .catch((err) => {
+              this.loading = false
+            })
+        }
       }
     },
     computed: {
       requiredToken() {
         return !this.accessToken
+      },
+      tooshortToken() {
+        return this.accessToken && this.accessToken.length <= 25
       }
     }
   }
