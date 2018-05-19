@@ -7,7 +7,7 @@ import $user from '@/services/user'
 const Stringify = require('querystring').stringify
 
 var axios = Axios.create({
-  baseURL: 'http://localhost:3000/api/fbvn',
+  baseURL: SERVER_URL,
   withCredentials: true
 })
 var publicAxios = Axios.create()

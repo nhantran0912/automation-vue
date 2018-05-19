@@ -1,14 +1,16 @@
 'use strict'
+const webpack = require('webpack')
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const configServer = require('../config/server')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
+var server = process.env.SERVER ? configServer[process.env.SERVER] : configServer['dev']
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -78,5 +80,10 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'SERVER_URL': JSON.stringify(server.baseURL)
+    })
+  ]
 }
