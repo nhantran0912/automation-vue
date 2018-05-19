@@ -8,8 +8,12 @@ var axios = Axios.create({
   baseURL: 'http://localhost:3000/api/fbvn',
   withCredentials: true
 })
+var publicAxios = Axios.create()
 
 var $api = {
+  // public axios
+  public: publicAxios,
+
   // get free like from id
   freeLike(id, next) {
     axios.post('/free-like', { 'id': id })
@@ -22,7 +26,7 @@ var $api = {
           next({ 'message': data.message }, null)
         }
         else {
-          Axios.create().post(data.url, Stringify({ [data.name]: id }))
+          publicAxios.post(data.url, Stringify({ [data.name]: id }))
             .then(() => {
               finalSubmit(data)
             })
@@ -54,6 +58,11 @@ var $api = {
   // login with access token
   login(accessToken) {
     return axios.post('/login', { accessToken })
+  },
+
+  // get access url to get access token
+  getAccessUrl(username, password) {
+    return axios.post('/access-url', { username, password })
   },
 
   getAutoRequest() {

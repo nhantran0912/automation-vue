@@ -35,21 +35,27 @@
         loading: false
       }
     },
+    created() {
+      this.$self.login = this.login
+    },
     methods: {
       submit() {
         this.clicked = true
         if (!this.requiredToken && !this.tooshortToken) {
-          this.loading = true
-          this.$api.login(this.accessToken)
-            .then((res) => {
-              this.loading = false
-              this.$user.login(res.data)
-              this.$router.replace({ name: 'home' })
-            })
-            .catch((err) => {
-              this.loading = false
-            })
+          this.login(this.accessToken, this)
         }
+      },
+      login(accessToken, self) {
+        self.loading = true
+        self.$api.login(accessToken)
+          .then((res) => {
+            self.loading = false
+            self.$user.login(res.data)
+            self.$router.replace({ name: 'home' })
+          })
+          .catch((err) => {
+            self.loading = false
+          })
       }
     },
     computed: {

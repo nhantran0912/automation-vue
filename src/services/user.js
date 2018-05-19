@@ -47,6 +47,7 @@ if (userData) {
 Vue.use({
   install(Vue, options) {
     Vue.prototype['$user'] = user
+    Vue.prototype['$self'] = {}
   }
 })
 
