@@ -48,7 +48,7 @@ var $api = {
           if (data.message.indexOf('Chưa Ở chế Độ Công Khai') !== -1 || data.message === firstData.message) {
             next({ 'message': data.message }, null)
           } else {
-            next(null, { 'message': 'Tăng like thành công.' })
+            next(null, { 'message': 'Chúc mừng bạn đã nhận like miễn phí thành công. Hãy đăng nhập để sử dụng thêm nhiều tính năng khác.' })
           }
         })
         .catch((err) => {
