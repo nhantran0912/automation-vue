@@ -9,9 +9,6 @@
 </template>
 
 <script>
-  import 'bootstrap'
-  import 'bootstrap/dist/css/bootstrap.min.css'
-
   import top from '@/components/layout/top.vue'
   import bottom from '@/components/layout/bottom.vue'
 
