@@ -42,32 +42,32 @@
           <h5>Tăng Like</h5>
           <p class="">Nhận hàng ngàn lượt like, cảm xúc cho bài viết, hình ảnh của bạn chỉ bằng một cú click chuột.</p>
         </div>
-        <div class="row">
-          <div class="col-sm-4 text-center">
-            <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
-              <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
-              <path d="M0 0h24v24H0z" fill="none" />
-            </svg>
-            <h5>Tự Động Bình Luận</h5>
-            <p class="">Tự động bình luận (comment) trên bài viết, hình ảnh của bạn.</p>
-          </div>
-          <div class="col-sm-4 text-center">
-            <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z" />
-            </svg>
-            <h5>Tăng Like Fanpage</h5>
-            <p class="">Tăng số lượt Thích trên Trang fanpage của bạn.</p>
-          </div>
-          <div class="col-sm-4 text-center">
-            <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
-              />
-            </svg>
-            <h5>Xếp Hạng Fanpage</h5>
-            <p class="">Tăng điểm xếp hạng của Trang fanpage trên cộng đồng Facebook.</p>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
+            <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          <h5>Tự Động Bình Luận</h5>
+          <p class="">Tự động bình luận (comment) trên bài viết, hình ảnh của bạn.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z" />
+          </svg>
+          <h5>Tăng Like Fanpage</h5>
+          <p class="">Tăng số lượt Thích trên Trang fanpage của bạn.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+            />
+          </svg>
+          <h5>Xếp Hạng Fanpage</h5>
+          <p class="">Tăng điểm xếp hạng của Trang fanpage trên cộng đồng Facebook.</p>
         </div>
       </div>
     </div>
