@@ -1,0 +1,29 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebApplication",
+  "name": "Hack Like Sub Facebook Việt Nam",
+  "url": "https://fbvn.org/",
+  "description": "Create your own delicious cookie recipes with our fun cookie creator game!",
+  "applicationCategory": "Auto, bot, hack Facebook",
+  "browserRequirements": "Trình duyệt hỗ trợ javascript",
+  "softwareVersion": "1.0.0",
+  "operatingSystem": "Tất cả",
+  "screenshot": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png",
+  "creator": {
+    "@type": "Person",
+    "name": "Hứa Phú Quý"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "7"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "VNĐ",
+    "url": "https://fbvn.org/"
+  }
+}
+</script>

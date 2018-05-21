@@ -14,7 +14,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chức Năng</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <div class="dropdown-menu">
             <router-link class="dropdown-item" to="/auto-request">Auto Kết Bạn</router-link>
             <router-link class="dropdown-item" to="/auto-like">Auto Like</router-link>
           </div>
