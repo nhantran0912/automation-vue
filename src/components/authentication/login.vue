@@ -10,7 +10,6 @@
       <div class="col-lg-6">
         <loginWithToken></loginWithToken>
       </div>
-
     </div>
 
     <div class="jumbotron">
@@ -22,7 +21,9 @@
             />
           </svg>
           <h5>Tự Động Kết Bạn</h5>
-          <p class="">Tính năng tuyệt vời giúp bạn đạt mốc 5.000 bạn bè một cách nhanh chóng.</p>
+          <p class="">Tính năng tuyệt vời giúp bạn đạt mốc 5.000 bạn bè một cách nhanh chóng.
+            <strong>Đồng thời cũng tăng cho tài khoản của bạn một lượng theo dõi (sub thật) tương ứng.</strong>
+          </p>
         </div>
         <div class="col-sm-4 text-center">
           <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
@@ -31,7 +32,8 @@
             />
           </svg>
           <h5>Tăng Lượt Theo Dõi</h5>
-          <p class="">Tăng lượt theo dõi (follow) trên Trang Cá Nhân của bạn không giới hạn.</p>
+          <p class="">Tăng lượt theo dõi (follow) bao gồm sub thật và sub ảo trên Trang Cá Nhân của bạn không giới hạn. Số lượng theo dõi tối đa mỗi ngày là 10.000,
+            tỉ lệ tụt chỉ tầm khoảng 0,1%.</p>
         </div>
         <div class="col-sm-4 text-center">
           <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
@@ -40,7 +42,8 @@
             <path d="M0 0h24v24H0z" fill="none" />
           </svg>
           <h5>Tăng Like</h5>
-          <p class="">Nhận hàng ngàn lượt like, cảm xúc cho bài viết, hình ảnh của bạn chỉ bằng một cú click chuột.</p>
+          <p class="">Không giới hạn số lượng like và cảm xúc cho bài viết (status), bài chia sẻ công khai, hình ảnh (avatar, ảnh bìa), và cả bình luận (cmt) của bạn
+            khi tham gia vào hệ thống của chúng tôi.</p>
         </div>
       </div>
       <div class="row">
@@ -50,7 +53,8 @@
             <path d="M0 0h24v24H0z" fill="none" />
           </svg>
           <h5>Tự Động Bình Luận</h5>
-          <p class="">Tự động bình luận (comment) trên bài viết, hình ảnh của bạn.</p>
+          <p class="">Mọi người sẽ tự động bình luận (comment) trên bài viết (status), hình ảnh (avatar, ảnh bìa), chia sẻ công khai của bạn. Hệ thống cũng cho phép
+            bạn có thể nhập nội dung bình luận hoặc chọn chức năng random.</p>
         </div>
         <div class="col-sm-4 text-center">
           <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
@@ -58,7 +62,8 @@
             <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z" />
           </svg>
           <h5>Tăng Like Fanpage</h5>
-          <p class="">Tăng số lượt Thích trên Trang fanpage của bạn.</p>
+          <p class="">Tăng số lượng người like trên Trang Cá Nhân (fanpage) của bạn. Facebook hiện đang thắt chặt việc lượt like trên fanpage tăng đột ngột, vì thế
+            chúng tôi khuyến khích bạn chỉ nên sử dụng tối đa 500 lượt/ngày. </p>
         </div>
         <div class="col-sm-4 text-center">
           <svg fill="#9400D3" height="64" viewBox="0 0 24 24" width="64">
@@ -67,11 +72,11 @@
             />
           </svg>
           <h5>Xếp Hạng Fanpage</h5>
-          <p class="">Tăng điểm xếp hạng của Trang fanpage trên cộng đồng Facebook.</p>
+          <p class="">Star Rating & Reviews trên fanpage là một trong những cách tốt nhất để tăng xếp hạng và quảng bá về trang của bạn. Đồng thời tăng thêm độ tin
+            cậy của người sử dụng khi truy cập vào.</p>
         </div>
       </div>
     </div>
-
 
   </div>
 </template>
@@ -86,11 +91,6 @@
       freeLike,
       loginWithAccount,
       loginWithToken
-    },
-    data() {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
     }
   }
 </script>
