@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row pt-3 pb-3">
         <div class="col-lg-9">
+          <div class="fb-like" data-href="https://fbvn.org/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
           <p>FBVN.ORG được thành lập vào ngày 19/5/2018</p>
           <p>
             Thông tin liên hệ: Số điện thoại 0902.615.325 hoặc Email tuyhpq@gmail.com
