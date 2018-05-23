@@ -7,7 +7,7 @@
       <div class="col-lg-12">
         <div class="card border-info mb-3">
           <h6 class="card-header text-light bg-primary">
-            {{ server.name }}
+            {{ server.serverName }}
             <span class="text-danger" v-show="server.waitingTime">(Chờ {{ server.waitingTime }} giây để tiếp tục)</span>
           </h6>
           <div class="card-body text-success" v-show="!server.waitingTime">
@@ -42,7 +42,7 @@
     methods: {
       submit(server) {
         this.loading = true
-        this.$api.submitAutoLike(server.cookie, server.id, server.credit, server.captcha)
+        this.$api.submitAutoLike(1, server.cookie, server.id, server.credit, server.captcha)
           .then((res) => {
             this.loading = false
             this.$notify.success(undefined, res.data.message, () => {
@@ -59,9 +59,9 @@
           })
       },
       reloadData() {
-        this.$api.getAutoLike()
+        this.$api.getAutoLike(1)
           .then((res) => {
-            this.data = res.data
+            this.data = [res.data]
           })
           .catch((err) => {
             // nothing
