@@ -1,21 +1,8 @@
-# automation-vue
+<p class=MsoNormal>H&#7879; th&#7889;ng <a href="https://fbvn.org/">Hack Like Sub Facebook</a>
+l&agrave; h&#7879; th&#7889;ng t&#7921; &#273;&#7897;ng t&#432;&#417;ng t&aacute;c tr&ecirc;n Facebook mi&#7877;n ph&iacute; v&agrave; kh&ocirc;ng gi&#7899;i h&#7841;n nh&#432; hack
+like, hack c&#7843;m x&uacute;c, hack sub, hack theo d&otilde;i, hack follow, hack k&#7871;t b&#7841;n, hack
+b&igrave;nh lu&#7853;n, hack chia s&#7867;, hack like fanpage, t&#259;ng x&#7871;p h&#7841;ng fanpage.</p>
 
-> A Vue.js project
+<p class=MsoNormal>Truy c&#7853;p: <a href="https://fbvn.org/">https://fbvn.org/</a></p>
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
