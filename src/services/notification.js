@@ -14,7 +14,7 @@ var notify = {
             }
         })
     },
-    error(title = 'Lỗi', text = '', next) {
+    error(title = 'Đã Xảy Ra Lỗi', text = '', next) {
         swal({
             type: 'error',
             title: title.toString(),
@@ -46,6 +46,7 @@ var notify = {
 Vue.use({
     install(Vue, options) {
         Vue.prototype['$notify'] = notify
+        Vue.prototype['$swal'] = swal
     }
 })
 
