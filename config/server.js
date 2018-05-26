@@ -2,9 +2,9 @@
 
 module.exports = {
   'dev': {
-    baseURL: 'http://localhost:3000/api/fbvn'
+    baseURL: 'http://localhost:8443/api/fbvn'
   },
   'prod': {
-    baseURL: 'https://fbvn.org:3000/api/fbvn'
+    baseURL: 'https://fbvn.org:8443/api/fbvn'
   }
 }

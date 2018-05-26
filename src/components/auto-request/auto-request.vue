@@ -61,10 +61,23 @@
       reloadData() {
         this.$api.getAutoRequest(1)
           .then((res) => {
-            this.data = [res.data]
+            res.data.id = 0
+            this.data[0] = res.data
+            this.$forceUpdate()
           })
           .catch((err) => {
             // nothing
+            debugger
+          })
+        this.$api.getAutoRequest(2)
+          .then((res) => {
+            res.data.id = 1
+            this.data[1] = res.data
+            this.$forceUpdate()
+          })
+          .catch((err) => {
+            // nothing
+            debugger
           })
       }
     }
