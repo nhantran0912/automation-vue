@@ -36,6 +36,10 @@
     text-shadow: 0 0 3px #FF0000, 0 0 6px #FF00FF;
   }
 
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
   .loader {
     display: inline-block;
     border-radius: 50%;

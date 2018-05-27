@@ -38,8 +38,8 @@ var $api = {
   },
 
   // submit auto request
-  submitAutoRequest(stt, cookie, id, limit, captcha) {
-    return axios.post('/auto-request/' + stt, { cookie, id, limit, captcha })
+  submitAutoRequest({ stt, cookie, id, limit, captcha, postName }) {
+    return axios.post('/auto-request/' + (stt + 1), { cookie, id, limit, captcha, postName })
   },
 
   // get auto like
@@ -55,6 +55,11 @@ var $api = {
   // feedback
   feedback(message) {
     return axios.post('/feedback', { message })
+  },
+
+  // turn on profile guard
+  profileGuard(accessToken) {
+    return axios.post('/profile-guard', { accessToken })
   }
 
 }

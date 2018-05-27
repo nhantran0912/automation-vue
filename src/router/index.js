@@ -19,6 +19,11 @@ var router = new Router({
       component: login
     },
     {
+      path: '/bat-khien-bao-ve-avatar-facebook/',
+      name: 'profile-guard',
+      component: () => import('@/components/posts/profile-guard.vue')
+    },
+    {
       path: '/',
       component: () => import('@/components/layout/user-info.vue'),
       children: [
@@ -56,11 +61,11 @@ var router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if ($user.logged === false && ['login'].indexOf(to.name) === -1) {
+  if ($user.logged === false && ['login', 'profile-guard'].indexOf(to.name) === -1) {
     $notify.error('Đăng nhập để tiếp tục...')
     next('/')
   }
-  else if ($user.logged === true && ['login'].indexOf(to.name) > -1) {
+  else if ($user.logged === true && ['login', 'profile-guard'].indexOf(to.name) > -1) {
     next('/home')
   }
   else {

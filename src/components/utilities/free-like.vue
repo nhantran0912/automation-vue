@@ -68,7 +68,7 @@
             if (!captcha) {
               swal.showValidationError('Vui lòng nhập mã captcha.')
             } else {
-              return this.$api.submitFreeLike(data.cookie, this.id, data.credit, captcha)
+              return this.$api.submitFreeLike(data.cookie, this.id, data.limit, captcha)
                 .then((res) => {
                   return true
                 })

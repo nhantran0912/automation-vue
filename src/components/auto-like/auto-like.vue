@@ -20,7 +20,7 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control" v-model="server.captcha" placeholder="Nhập mã captcha bạn nhìn thấy ở trên" aria-label="Captcha" aria-describedby="basic-addon1">
             </div>
-            <button type="button" class="btn btn-danger" @click="submit(server)" :disabled="!server.id || !server.captcha || loading">Gửi (tối đa {{server.credit}})</button>
+            <button type="button" class="btn btn-danger" @click="submit(server)" :disabled="!server.id || !server.captcha || loading">Gửi (tối đa {{server.limit}})</button>
           </div>
         </div>
       </div>
@@ -42,10 +42,10 @@
     methods: {
       submit(server) {
         this.loading = true
-        this.$api.submitAutoLike(1, server.cookie, server.id, server.credit, server.captcha)
+        this.$api.submitAutoLike(1, server.cookie, server.id, server.limit, server.captcha)
           .then((res) => {
             this.loading = false
-            this.$notify.success(undefined, res.data.message, () => {
+            this.$notify.success(undefined, 'Chúc mừng bạn đã thực hiện thành công.', () => {
               this.data = []
               this.reloadData()
             })

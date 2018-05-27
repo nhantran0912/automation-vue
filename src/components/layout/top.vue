@@ -20,9 +20,9 @@
           </div>
         </li>
         <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#">Thủ Thuật</a>
-        </li>
-        <li class="nav-item">
+          <router-link class="nav-link" to="/bat-khien-bao-ve-avatar-facebook/">Bật Khiên</router-link>
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Liên Hệ</a>
         </li> -->
       </ul>
