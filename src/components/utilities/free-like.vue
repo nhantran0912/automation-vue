@@ -56,7 +56,7 @@
       confirm(data) {
         var swal = this.$swal
         swal({
-          title: data.serverName,
+          title: 'Máy chủ LIKE miễn phí (Quốc tế)',
           input: 'text',
           html: `<span>Xác nhận hack like cho <b>ID: ${this.id}</b></span><br><img src="${data.captchaSrc}" id="imgCaptcha">`,
           showCancelButton: true,

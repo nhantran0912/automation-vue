@@ -33,23 +33,23 @@ var $api = {
   },
 
   // get auto request
-  getAutoRequest(stt) {
-    return axios.get('/auto-request/' + stt)
+  getAutoRequest(name) {
+    return axios.get('/auto-request/' + name)
   },
 
   // submit auto request
-  submitAutoRequest({ stt, cookie, id, limit, captcha, postName }) {
-    return axios.post('/auto-request/' + (stt + 1), { cookie, id, limit, captcha, postName })
+  submitAutoRequest(name, { cookie, id, limit, captcha, input }) {
+    return axios.post('/auto-request/' + name, { cookie, id, limit, captcha, input })
   },
 
   // get auto like
-  getAutoLike(stt) {
-    return axios.get('/auto-like/' + stt)
+  getAutoLike(name) {
+    return axios.get('/auto-like/' + name)
   },
 
   // submit auto like
-  submitAutoLike(stt, cookie, id, limit, captcha) {
-    return axios.post('/auto-like/' + stt, { cookie, id, limit, captcha })
+  submitAutoLike(name, { cookie, id, limit, captcha, input }) {
+    return axios.post('/auto-like/' + name, { cookie, id, limit, captcha, input })
   },
 
   // feedback
