@@ -1,6 +1,6 @@
 <template>
   <div>
-    <auto name="fbsub" type="like" class="mb-3" title="Máy chủ suFB (Quốc tế)"></auto>
+    <auto name="fbsub" type="like" css="mb-3" title="Máy chủ suFB (Quốc tế)"></auto>
   </div>
 </template>
 

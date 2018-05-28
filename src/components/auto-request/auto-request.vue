@@ -1,7 +1,7 @@
 <template>
   <div>
-    <auto name="fbsub" type="sub" class="mb-3" title="Máy chủ suFB (Quốc tế)"></auto>
-    <auto name="vipfb" type="sub" class="mb-3" title="Máy chủ FBvip (Quốc tế)"></auto>
+    <auto name="fbsub" type="sub" css="mb-3" title="Máy chủ suFB (Quốc tế)"></auto>
+    <auto name="vipfb" type="sub" css="mb-3" title="Máy chủ FBvip (Quốc tế)"></auto>
   </div>
 </template>
 
