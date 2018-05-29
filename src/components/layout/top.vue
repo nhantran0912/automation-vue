@@ -19,9 +19,9 @@
             <router-link class="dropdown-item" to="/auto-like">Auto Like</router-link>
           </div>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link class="nav-link" to="/bat-khien-bao-ve-avatar-facebook/">Bật Khiên</router-link>
-        </li> -->
+        </li>
         <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Liên Hệ</a>
         </li> -->

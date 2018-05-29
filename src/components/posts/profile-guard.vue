@@ -31,13 +31,13 @@
         Giới Thiệu
       </h2>
       <div class="card-body text-success">
-        <h5 class="card-title">1. Khiên bảo vệ avatar Facebook là gì?</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <p class="card-text small mt-3">
-          Bạn có thể dùng
-          <a href="https://goo.gl/auEKHz">Tiện ích của Chrome</a> để lấy mã truy cập.
-        </p>
+        <h3 class="card-title">1. Khiên bảo vệ avatar Facebook là gì?</h3>
+        <p class="card-text">Khiên bảo vệ avatar Facebook (Profile Picture Guard) là một lớp phủ (như khiên bảo vệ) xung quanh ảnh đại diện của bạn. </p>
+        <img src="../../assets/profile-guard.jpg" class="rounded mx-auto d-block" alt="Ảnh minh họa">
+        <h3 class="card-title">2. Khiên bảo vệ có tác dụng gì?</h3>
+        <p class="card-text">&star; Bảo vệ ảnh đại diện và người khác không thể sao chép ảnh đại diện của bạn.</p>
+        <p class="card-text">&star; Tăng độ bảo mật cũng như độ tin cậy của Trang Cá Nhân.</p>
+        <p class="card-text">&star; Chống RIP và giả mạo tài khoản.</p>
       </div>
     </div>
   </div>

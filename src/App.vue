@@ -40,6 +40,10 @@
     font-size: 1.5rem;
   }
 
+  .card-body>h3 {
+    font-size: 1.25rem;
+  }
+
   .loader {
     display: inline-block;
     border-radius: 50%;
