@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import $user from '@/services/user'
 import $notify from '@/services/notification'
+import $seo from '@/services/seo'
+
 import login from '@/components/authentication/login.vue'
 
 Vue.use(Router)
@@ -16,12 +18,14 @@ var router = new Router({
     {
       path: '/',
       name: 'login',
-      component: login
+      component: login,
+      meta: $seo.index
     },
     {
       path: '/bat-khien-bao-ve-avatar-facebook/',
       name: 'profile-guard',
-      component: () => import('@/components/posts/profile-guard.vue')
+      component: () => import('@/components/posts/profile-guard.vue'),
+      meta: $seo.index
     },
     {
       path: '/',
@@ -31,25 +35,19 @@ var router = new Router({
           path: '/home',
           name: 'home',
           component: () => import('@/components/home/dashboard.vue'),
-          meta: {
-            title: 'Trang Chủ'
-          }
+          meta: $seo.index
         },
         {
           path: '/auto-request',
           name: 'auto-request',
           component: () => import('@/components/auto-request/auto-request.vue'),
-          meta: {
-            title: 'Trang Chủ'
-          }
+          meta: $seo.index
         },
         {
           path: '/auto-like',
           name: 'auto-like',
           component: () => import('@/components/auto-like/auto-like.vue'),
-          meta: {
-            title: 'Trang Chủ'
-          }
+          meta: $seo.index
         }
       ]
     },
@@ -69,7 +67,14 @@ router.beforeEach((to, from, next) => {
     next('/home')
   }
   else {
-    // document.title = to.meta.title + ' | Geekly進捗管理ページ'
+    document.title = to.meta.title + ' | FBVN'
+    document.head.querySelector('meta[name=description]').content = to.meta.description
+    document.head.querySelector('meta[name=keywords]').content = to.meta.keywords
+    document.head.querySelector('meta[property="og:title"]').content = to.meta['og:title']
+    document.head.querySelector('meta[property="og:image"]').content = to.meta['og:image']
+    document.head.querySelector('meta[property="og:url"]').content = to.meta['og:url']
+    document.head.querySelector('meta[property="og:description"]').content = to.meta['og:description']
+    document.head.querySelector('link[rel=canonical]').href = to.meta.canonical
     next()
   }
 })
