@@ -32,7 +32,7 @@
       </h2>
       <div class="card-body text-success">
         <h3 class="card-title">1. Khiên bảo vệ avatar Facebook là gì?</h3>
-        <p class="card-text">Khiên bảo vệ avatar Facebook (Profile Picture Guard) là một lớp phủ (như khiên bảo vệ) xung quanh ảnh đại diện của bạn. </p>
+        <p class="card-text">Khiên bảo vệ avatar Facebook (Profile Picture Guard) là một lớp phủ (như khiên bảo vệ) xung quanh ảnh đại diện của bạn.</p>
         <img src="../../assets/profile-guard.jpg" class="rounded mx-auto d-block" alt="Ảnh minh họa">
         <h3 class="card-title">2. Khiên bảo vệ có tác dụng gì?</h3>
         <p class="card-text">&star; Bảo vệ ảnh đại diện và người khác không thể sao chép ảnh đại diện của bạn.</p>

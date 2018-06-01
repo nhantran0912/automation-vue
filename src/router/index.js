@@ -25,7 +25,7 @@ var router = new Router({
       path: '/bat-khien-bao-ve-avatar-facebook/',
       name: 'profile-guard',
       component: () => import('@/components/posts/profile-guard.vue'),
-      meta: $seo.index
+      meta: $seo['profile-guard']
     },
     {
       path: '/',
@@ -69,7 +69,6 @@ router.beforeEach((to, from, next) => {
   else {
     document.title = to.meta.title + ' | FBVN'
     document.head.querySelector('meta[name=description]').content = to.meta.description
-    document.head.querySelector('meta[name=keywords]').content = to.meta.keywords
     document.head.querySelector('meta[property="og:title"]').content = to.meta['og:title']
     document.head.querySelector('meta[property="og:image"]').content = to.meta['og:image']
     document.head.querySelector('meta[property="og:url"]').content = to.meta['og:url']
