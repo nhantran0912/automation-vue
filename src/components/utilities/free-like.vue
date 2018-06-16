@@ -56,51 +56,38 @@
       confirm(data) {
         var swal = this.$swal
         swal({
-          title: 'Máy chủ LIKE miễn phí (Quốc tế)',
+          title: 'Máy chủ LIKE miễn phí (Việt Nam)',
           input: 'text',
-          html: `<span>Xác nhận hack like cho <b>ID: ${this.id}</b></span><br><img src="${data.captchaSrc}" id="imgCaptcha">`,
+          inputValue: this.id,
+          html: `<span>Xác nhận hack like cho ID:</span>`,
           showCancelButton: true,
           confirmButtonText: 'Xác Nhận',
           cancelButtonText: 'Hủy',
           showLoaderOnConfirm: true,
-          inputPlaceholder: 'Nhập captcha vào đây',
-          preConfirm: (captcha) => {
-            if (!captcha) {
-              swal.showValidationError('Vui lòng nhập mã captcha.')
+          inputPlaceholder: 'Nhập ID vào đây',
+          preConfirm: (id) => {
+            if (!id) {
+              swal.showValidationError('Vui lòng nhập ID cần hack like.')
             } else {
-              return this.$api.submitFreeLike(data.cookie, this.id, data.limit, captcha)
+              return this.$api.submitFreeLike(id)
                 .then((res) => {
                   return true
                 })
                 .catch((err) => {
-                  return this.$api.getFreeLike()
-                    .then((res) => {
-                      data = res.data
-                      if (data.waitingTime) {
-                        return parseInt(data.waitingTime)
-                      } else {
-                        document.getElementById('imgCaptcha').src = data.captchaSrc
-                        swal.showValidationError(err.response.data.message)
-                      }
-                    })
-                    .catch((err) => {
-                      return false
-                    })
+                  return err.response.data.message
                 })
             }
           },
           allowOutsideClick: () => !swal.isLoading()
         }).then((result) => {
-          if (typeof result.value === 'number') {
-            this.$notify.error('Hệ Thống Đang Bận', `Vui lòng chờ <b>${result.value} giây</b> để tiếp tục.`)
-          } else if (result.value === true) {
+          if (result.value === true) {
             swal({
               title: 'Chúc mừng bạn đã nhận LIKE thành công!'
             })
-          } else if (result.value === false) {
+          } else if (typeof result.value === 'string' && result.value.length > 0) {
             swal({
               type: 'error',
-              title: 'Lỗi không mong muốn, hãy thử lại!'
+              title: result.value
             })
           }
         })

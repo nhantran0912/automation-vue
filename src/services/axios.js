@@ -18,8 +18,8 @@ var $api = {
     return axios.get('/free-like')
   },
 
-  submitFreeLike(cookie, id, limit, captcha) {
-    return axios.post('/free-like', { cookie, id, limit, captcha })
+  submitFreeLike(id) {
+    return axios.post('/free-like', { id })
   },
 
   // login with access token
